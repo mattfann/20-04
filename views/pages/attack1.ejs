@@ -5,13 +5,12 @@
         <title></title>
     </head>
     <body>
+        <h2><%=playerOne %> has been attacked - Its Now <%=playerOne %>'s turn to Attack</h2>
         <h1> <%=playerOne %>'s Health <%=playerOneHealth%></h1>
         <h1> <%=playerTwo %>'s Health <%=playerTwoHealth%></h1>
-        <form action="/attack1" method="post">
-            <input id="submitp1attack" type="submit" value="Attack <%=playerOne %>">
-        </form>
         <form action="/attack2" method="post">
-            <input id="submitp2attack" type="submit" value="Attack <%=playerTwo %>">
+            <input id="submitp1attack" type="submit" value="Attack">
         </form>
+        
     </body>
 </html>
