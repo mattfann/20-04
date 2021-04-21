@@ -21,11 +21,17 @@ app.post('/gamepage', function(req,res) {
 
 app.post('/attack1', function(req,res) {
     game.attackOne();
-     res.render('pages/attack1', {playerOne: game.p1,  playerTwo: game.p2, playerOneHealth: game.player1HP, playerTwoHealth: game.player2HP})})   
-
+    if(game.player1HP && game.player2HP > 0) {
+      res.render('pages/attack1', {playerOne: game.p1,  playerTwo: game.p2, playerOneHealth: game.player1HP, playerTwoHealth: game.player2HP})   
+    } else {
+     res.render('pages/end2', {playerOne: game.p1,  playerTwo: game.p2, playerOneHealth: game.player1HP, playerTwoHealth: game.player2HP})}})
+    
 app.post('/attack2', function(req,res) {
     game.attackTwo();
-      res.render('pages/attack2', {playerOne: game.p1,  playerTwo: game.p2, playerOneHealth: game.player1HP, playerTwoHealth: game.player2HP})}) 
+    if(game.player1HP && game.player2HP > 0) {
+      res.render('pages/attack2', {playerOne: game.p1,  playerTwo: game.p2, playerOneHealth: game.player1HP, playerTwoHealth: game.player2HP})
+    } else {
+      res.render('pages/end1', {playerOne: game.p1,  playerTwo: game.p2, playerOneHealth: game.player1HP, playerTwoHealth: game.player2HP})}}) 
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)

@@ -6,12 +6,11 @@ class Game{
         this.player2HP = 100;
     }
     attackOne(){
-        this.player1HP -= 10;
+        this.player1HP -= 10;   
     }
     attackTwo() {
-        this.player2HP -= 10;
+        this.player2HP -= 10;   
     }
-    
 }
 
 module.exports = Game
